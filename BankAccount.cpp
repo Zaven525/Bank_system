@@ -2,7 +2,10 @@
 
 BankAccount::BankAccount() : _accountHolder("Unknown"), _accountNumber(0), _balance(0) {}
 BankAccount::BankAccount(std::string accountHolder, int accountNumber, double balance) : _accountHolder(accountHolder), _accountNumber(accountNumber), _balance(balance) {}
-BankAccount::BankAccount(const BankAccount& other) {}
+BankAccount::BankAccount(const BankAccount& other)
+    : _accountHolder(other._accountHolder),
+      _accountNumber(other._accountNumber),
+      _balance(other._balance) {}
 BankAccount::~BankAccount() {}
 
 void BankAccount::deposit(double amount) {
@@ -29,9 +32,29 @@ bool BankAccount::withdraw(double amount) {
     return true;
 }
 
-int BankAccount::get_accountNumber() {
+//getters
+std::string BankAccount::AccountHolder() {
+    return _accountHolder;
+}
+
+int BankAccount::AccountNumber() {
     return _accountNumber;
 }
 
+double BankAccount::Balance() {
+    return _balance;
+}
 
+//setters
 
+void BankAccount::AccountHolder(std::string accountHolder) {
+    _accountHolder = accountHolder;
+}
+
+void BankAccount::AccountNumber(int accountNumber) {
+    _accountNumber = accountNumber;
+}
+
+void BankAccount::Balance(double balance) {
+    _balance = balance;
+}
