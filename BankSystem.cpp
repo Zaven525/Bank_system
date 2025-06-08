@@ -12,7 +12,7 @@ void BankSystem::addAccount(const std::string& name, int accountNumber, double i
             return;
         }
     }
-    _account.push_back(BankAccount(name, accountNumber, intitialBalance));
+    _account.emplace_back(BankAccount(name, accountNumber, intitialBalance));
 }
 
 BankAccount* BankSystem::findAccount(int accountNumber) {

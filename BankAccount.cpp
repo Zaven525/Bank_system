@@ -1,7 +1,7 @@
 #include "BankAccount.h"
 
 BankAccount::BankAccount() : _accountHolder("Unknown"), _accountNumber(0), _balance(0) {}
-BankAccount::BankAccount(std::string accountHolder, int accountNumber, double balance) : _accountHolder(accountHolder), _accountNumber(accountNumber), _balance(balance) {}
+BankAccount::BankAccount(const std::string& accountHolder, int accountNumber, double balance) : _accountHolder(accountHolder), _accountNumber(accountNumber), _balance(balance) {}
 BankAccount::BankAccount(const BankAccount& other)
     : _accountHolder(other._accountHolder),
       _accountNumber(other._accountNumber),
@@ -33,7 +33,7 @@ bool BankAccount::withdraw(double amount) {
 }
 
 //getters
-std::string BankAccount::AccountHolder() {
+const std::string& BankAccount::AccountHolder() {
     return _accountHolder;
 }
 
@@ -47,7 +47,7 @@ double BankAccount::Balance() {
 
 //setters
 
-void BankAccount::AccountHolder(std::string accountHolder) {
+void BankAccount::AccountHolder(const std::string& accountHolder) {
     _accountHolder = accountHolder;
 }
 

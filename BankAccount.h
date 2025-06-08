@@ -3,7 +3,7 @@
 class BankAccount {
 public:
     BankAccount();
-    BankAccount(std::string, int, double);
+    BankAccount(const std::string&, int, double);
     BankAccount(const BankAccount&);
     ~BankAccount();
     void deposit(double);
@@ -11,12 +11,12 @@ public:
     bool withdraw(double);
 
     //getters
-    std::string AccountHolder();
+    const std::string& AccountHolder();
     int AccountNumber();
     double Balance();
 
     //seters
-    void AccountHolder(std::string);
+    void AccountHolder(const std::string&);
     void AccountNumber(int);
     void Balance(double);
 private:
